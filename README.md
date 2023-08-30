@@ -1,3 +1,5 @@
+## Mark: 105/100 :)
+
 # Assessment 3 - Vanilla JS: LurkForWork
 
 1. Background & Motivation
