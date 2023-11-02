@@ -1,0 +1,442 @@
+:root {
+    --color-background: #F9F6EE;
+    --color-content: white;
+    --color-text: black;
+    /* From https://ishadeed.com/article/new-facebook-css/ */
+    --box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.2),
+        0 2px 4px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    --watch-email: black;
+    --nav-hover-color: #ddd;
+    --color-input: white;
+}
+
+.dark-mode {
+    --color-background: rgb(24, 25, 26);
+    --color-content: rgb(36, 37, 38);
+    --color-text: rgb(200, 200, 200);
+    --box-shadow: grey;
+    --watch-email: white;
+    --nav-hover-color: #3d3d3d;
+    --color-input: rgb(58, 59, 60);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Georgia;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-span {
+    font-size: 30px;
+    color: rgb(102, 52, 127);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#nav-logo-span {
+    display: inline;
+    font-size: 2.2em;
+    color: rgb(102, 52, 127);
+}
+
+#nav {
+    background-color: var(--color-content);
+    z-index: 3;
+    position: sticky;
+    overflow: hidden;
+    top: 0;
+    width: 100vw;
+    box-shadow: 0 4px 1px -3px gray;
+}
+
+.nav-button {
+    font-size: 35px;
+    background-color: transparent;
+    padding: 14px 22px;
+    color: var(--color-text);
+}
+
+.nav-button:hover {
+    background-color: var(--nav-hover-color);
+}
+
+#nav-home-button {
+    position: absolute;
+    left: calc(50% - 17.5px);
+}
+
+#nav-right {
+    float: right;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content {
+    background-color: var(--color-content);
+    margin: 15% auto;
+    padding: 20px;
+    width: 40%;
+    text-align: center;
+    display: block;
+    box-shadow: var(--box-shadow);
+    border-radius: 13px;
+    padding-bottom: 40px;
+}
+
+.popup-input-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close-popup {
+    color: #aaa;
+    float: right;
+    font-size: 25px;
+}
+
+.close-popup:hover {
+    color: black;
+    cursor: pointer;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+.intro-screen {
+    margin: 20px;
+    padding: 5px 50px 35px 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 400px;
+    background-color: var(--color-content);
+    box-shadow: var(--box-shadow);
+    border-radius: 13px;
+}
+
+.btn-submit {
+    width: 311px;
+    height: 30px;
+    border-radius: 6px;
+    margin: 7px;
+    background-color: rgb(102, 52, 127);
+    color: white;
+}
+
+.btn-submit:hover,
+.post-comment-button:hover,
+#watch-button:hover,
+.small-media-button:hover {
+    background-color: rgb(55, 48, 107);
+    transition: 0.4s;
+}
+
+.btn-leave {
+    background-color: transparent;
+    color: rgb(102, 52, 127);
+    font-size: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.btn-leave:hover {
+    text-decoration: underline;
+}
+
+input {
+    padding: 0;
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
+    margin: 7px;
+    padding: 1px 8px;
+    background-color: var(--color-input);
+    color: var(--color-text);
+}
+
+input::placeholder {
+    color: gray;
+}
+
+#main-page {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#watch-email-div {
+    position: absolute;
+    top: 75px;
+    right: 0px;
+    display: flex;
+}
+
+#watch-email-button {
+    font-size: 20px;
+    background-color: transparent;
+    color: var(--watch-email)
+}
+
+#watch-email-input {
+    display: none;
+    width: 200px;
+    height: 17px;
+}
+
+.job-post {
+    padding: 15px 30px;
+    margin-top: 25px;
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    word-break: break-word;
+    box-shadow: var(--box-shadow);
+    border-radius: 13px;
+    background-color: var(--color-content);
+}
+
+.job-content {
+    display: flex;
+    width: 500px;
+    flex-direction: row;
+    margin: 20px 0;
+    word-break: break-word;
+}
+
+.job-img {
+    width: 50px;
+    height: 50px;
+    padding: 0 20px;
+}
+
+p {
+    font-size: 12px;
+    display: inline;
+}
+
+h5 {
+    display: inline;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.fa-thumbs-up {
+    color: rgb(32, 117, 249);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.fa-thumbs-up:hover {
+    transform: scale(1.3);
+}
+
+.likes-comments-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-comment-div {
+    width: 100%;
+    display: flex;
+}
+
+.comment-input {
+    width: 100%;
+    border-radius: 20px;
+    margin-left: -5px;
+}
+
+.hover-underline:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.other-profile-page {
+    border: 1px solid violet;
+}
+
+#profile-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+#profile-name {
+    display: inline;
+    margin: 10px 0 0 0;
+}
+
+#watch-button {
+    padding: 5px 15px;
+    border-radius: 30px;
+    color: white;
+    background-color: rgba(102, 52, 127);
+    margin-top: 10px;
+}
+
+.liked-user,
+.watcher {
+    display: block;
+}
+
+.watchers-span {
+    display: inline;
+    font-size: 10px;
+}
+
+#profile-page {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#create-job-btn {
+    font-size: 20px;
+    border-radius: 15px;
+    background-color: rgb(4, 170, 109);
+    color: white;
+    padding: 5px 13px;
+    margin-top: -10px;
+}
+
+#create-job-btn:hover {
+    background-color: rgb(4, 143, 92);
+    transition: 0.4s;
+}
+
+.edit-job-buttons-father {
+    position: relative;
+}
+
+.edit-job-buttons {
+    position: absolute;
+    right: -580px;
+    word-break: normal;
+    width: 70px;
+}
+
+.small-media-button {
+    margin-bottom: 3px;
+    padding: 3px 5px;
+    border-radius: 30px;
+    color: white;
+    background-color: rgba(102, 52, 127);
+    font-size: 11px;
+}
+
+#update-profile-div {
+    position: relative;
+    width: 0;
+    height: 0;
+    right: -80px;
+}
+
+#create-job-error {
+    color: red;
+    display: block;
+}
+
+/* Notifications */
+#notif-popup {
+    display: none;
+    position: absolute;
+    top: 100px;
+    width: 300px;
+    max-height: 1000px;
+    box-shadow: var(--box-shadow);
+    background-color: rgb(102, 52, 127);
+    text-align: center;
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+
+.notif-text-div {
+    margin: 5px 0;
+    padding: 10px 2px;
+    border-bottom: 0.5px solid grey;
+    display: block;
+    text-align: left;
+
+}
+
+#dark-mode-sun {
+    display: none;
+    color: yellow;
+}
+
+#dark-mode-moon {
+    color: darkblue;
+}
+
+@media only screen and (max-width: 700px) {
+    .job-post {
+        width: 350px;
+    }
+
+    input {
+        width: 150px;
+    }
+
+    .btn-submit {
+        width: 150px;
+    }
+
+    .edit-job-buttons {
+        right: -390px;
+    }
+
+    .job-content {
+        width: 315px;
+    }
+
+    #nav-logo-span {
+        font-size: 20px;
+    }
+
+    .nav-button {
+        font-size: 20px;
+        background-color: transparent;
+        padding: 10px;
+    }
+
+    #watch-email-div {
+        top: 47px;
+    }
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 700px) {
+    .nav-button {
+        padding: 14px 10px;
+    }
+}

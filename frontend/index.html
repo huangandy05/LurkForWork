@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LurkForWork</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- You can add your styles and scripts here -->
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/global.css" />
+    <script src="https://kit.fontawesome.com/222ab95cdb.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="nav">
+        <nav>
+            <a><button id="nav-logo-span" class="logo-span nav-button">LurkForWork</button></a>
+            <a><button id="nav-home-button" class="nav-button"><i class="fa-solid fa-house"></i></button></a>
+            <div id="nav-right">
+                <!-- Icon for online/offline status -->
+                <a><button id="nav-toggle-dark" class="nav-button">
+                        <i class="fa-solid fa-sun" id="dark-mode-sun"></i>
+                        <i class="fa-solid fa-moon" id="dark-mode-moon"></i>
+                    </button></a>
+                <a><button id="nav-logout" class="nav-button">Logout</button></a>
+                <a><button id="nav-toggle-notifs" class="nav-button"><i id="bell-icon"
+                            class="fa-regular fa-bell-slash"></i></button></a>
+                <a><button id="nav-profile-button" class="nav-button"><i class="fa-regular fa-user"></i></button></a>
+            </div>
+        </nav>
+    </div>
+    <main role="main">
+        <span id="login-logo-span" class="logo-span">
+            <h1>LurkForWork</h1>
+        </span>
+        <!-- app goes here -->
+        <!-- Login Page -->
+        <div id="login-screen" class="intro-screen page">
+            <h1>Login</h1>
+            <form name="login_form">
+                <input name="login_email" type="text" placeholder="Email Address"><br>
+                <input name="login_pw" type="password" placeholder="Password"><br>
+                <button id="btn-login" class="btn-submit">Login</button> <br>
+                Don't have an account?
+                <button id="btn-join" class="btn-leave">Join now</button>
+            </form>
+        </div>
+
+        <!-- Registration Page -->
+        <div id="rego-screen" class="intro-screen page">
+            <h1>Register</h1>
+            <form name="rego_form">
+                <input name="rego_email" type="text" placeholder="Email Address"><br>
+                <input name="rego_name" type="text" placeholder="Name"><br>
+                <input name="rego_pw" type="password" placeholder="Password"><br>
+                <input name="rego_confirm_pw" type="password" placeholder="Confirm Password"><br>
+                <button id="btn-register" class="btn-submit">Register</button> <br>
+                Already have an account?
+                <button id="btn-signin" class="btn-leave">Sign In</button>
+            </form>
+        </div>
+        <!-- MAIN PAGE STUB CODE (what feed may look like)-->
+        <div id="main-page" class="page">
+            <div id="watch-email-div">
+                <button id="watch-email-button"><i id="watch-email-icon" class="fa-solid fa-eye"></i></button>
+                <input id="watch-email-input" placeholder="Email of who you want to watch">
+            </div>
+        </div>
+
+        <!-- Profile Page -->
+        <div id="profile-page" class="page">
+            <div id="profile-info">
+                <!-- Update for own profile -->
+                <div id="update-profile-div">
+                    <button id="update-profile-btn" class="small-media-button">Update</button>
+                </div>
+                <img alt="profile-photo" id="profile-img">
+                <h3 id="profile-name"></h3>
+                <p id="profile-email"></p>
+
+                <span class="watchers hover-underline" id="profile-num-watchers"></span>
+                <button id="watch-button">Watch</button>
+            </div>
+
+            <!-- Create job (appears for own profile) -->
+            <div id="create-job-container">
+                <button id="create-job-btn">
+                    <i class="fa-solid fa-plus"></i> Create Job
+                </button>
+            </div>
+        </div>
+
+        <div id="generic-popup" class="popup">
+            <div id="generic-popup-content" class="popup-content">
+                <span class="close-popup" id="generic-close-span">
+                    <i class="fa-sharp fa-regular fa-circle-xmark"></i>
+                </span>
+            </div>
+        </div>
+
+        <div id="notif-popup">
+            <div id="notif-popup-content">
+                <span class="close-popup" id="notif-close-span">
+                    <i class="fa-sharp fa-regular fa-circle-xmark"></i>
+                </span>
+                <h3>Notifications <i class="fa-solid fa-bell"></i></h3>
+            </div>
+            <button id="refresh-main-page">Refresh main page</button>
+        </div>
+
+    </main>
+    <footer>
+        <p>&copy; lurkforwork.com 2022</p>
+    </footer>
+    <script type="module" src="src/main.js"></script>
+    <script type="module" src="src/login.js"></script>
+    <script type="module" src="src/rego.js"></script>
+    <script type="module" src="src/mainPage.js"></script>
+    <script type="module" src="src/profile.js"></script>
+    <script type="module" src="src/jobs.js"></script>
+</body>
+
+</html>
